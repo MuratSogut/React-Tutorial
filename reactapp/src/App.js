@@ -23,18 +23,26 @@ function App() {
     </div>
 
       <h4>App Component</h4>
-      <User/>
-      <User/>
-      <User/>
-      <User/>
+
+      <Navbar title="PROPS BAŞLIK 1"/>
+
+      <hr/>
+ 
+      <User
+      name = "Murat Söğüt"
+      salary = "6500"
+      department = "Bilişim"
+      />
+       
+       <User
+      name = "Cımbız"
+      salary = "5500"
+   
+      />
 
       <h4 style = {{color:"blue", fontSize:"20px"}}>APP</h4>
       <h4 className="header">APP 2</h4>
-
-      <Navbar/>
-      <Navbar/>
-
-      
+ 
     </div>
   );
 }
