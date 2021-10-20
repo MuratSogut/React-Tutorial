@@ -3,15 +3,27 @@ import PropTypes from 'prop-types'
 
 class User extends Component {
 
+state = {
+    isVisible : false
+}
+
 static defaultProps = {
     name : "Bilgi Yok",
     department : "Bilgi Yok",
     salary : "Bilgi Yok"
 }
 
+// constructor(props){
+//     super(props);
+//     this.state = {
+//         isVisible : false
+//     }
+// }
     render() {
  
         const {name, department, salary} = this.props;
+        const {isVisible} = this.state;
+
 
         return (
             <div className = "col-md-8 mb-4">
@@ -25,12 +37,20 @@ static defaultProps = {
 
                     </div>   
 
-                    <div className = "card-body">
+                    { 
+                        isVisible ?  
+                        <div className = "card-body">
 
-                        <p className = "card-text">Departman : {department}</p>
-                        <p className = "card-text">Maaş : {salary}</p>
+                            <p className = "card-text">Departman : {department}</p>
+                            <p className = "card-text">Maaş : {salary}</p>
 
-                    </div>
+                        </div>
+
+                        : null
+                    }
+
+
+                   
  
                 </div>        
 
