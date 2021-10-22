@@ -19,6 +19,19 @@ static defaultProps = {
 //         isVisible : false
 //     }
 // }
+
+// onClickEvent = (number, e) => {
+//     console.log(e.target);
+//     console.log(number);
+// }
+
+onClickEvent = (e) => {
+    this.setState({
+        isVisible : !this.state.isVisible
+    })
+
+}
+
     render() {
  
         const {name, department, salary} = this.props;
@@ -32,7 +45,7 @@ static defaultProps = {
                     
                     <div className = "card-header d-flex justify-content-between">
                         
-                        <h4 className = "d-inline">{name}</h4>
+                        <h4 className = "d-inline" onClick = {this.onClickEvent}>{name}</h4>
                         <i className = "far fa-trash-alt" style = {{cursor : "pointer"}}></i>
 
                     </div>   
@@ -74,7 +87,7 @@ static defaultProps = {
             </div>
         )
     }
-}
+}   
 
 User.propTypes = {
     name : PropTypes.string.isRequired,
